@@ -1,18 +1,35 @@
 <!DOCTYPE html>
+
 <html>
   <head>
     <meta charset="utf-8" />
     <title>ReactFocusByArrow</title>
+    <style>
+      html {
+        font-family: sans-serif;
+        margin: 0 auto;
+        max-width: 50ch;
+      }
+    </style>
   </head>
+
   <body>
+    <h1>&lt;ReactFocusByArrow&gt;</h1>
+    <p>Focus form elements with the arrow keys. This is just a React-friendly wrapper for <a href="https://github.com/brian-c/focus-by-arrow">my generic focus-by-arrow library</a>.</p>
+
+    <div id="demo"></div>
+
+    <p>View source for usage!</p>
+
     <script src="https://unpkg.com/react@15.0.1/dist/react.js"></script>
     <script src="https://unpkg.com/react-dom@15.0.1/dist/react-dom.js"></script>
     <script src="https://unpkg.com/babel-core@5.8.38/browser.js"></script>
-    <script src="https://rawgit.com/brian-c/focus-by-arrow/4f05026e183960c068b92b769a8e2f7551349a3e/index.js"></script>
+    <script src="https://brian-c.github.io/focus-by-arrow/index.js"></script>
     <script src="./index.js"></script>
+
     <script type="text/babel">
       var demo = (
-        <ReactFocusByArrow>
+        <ReactFocusByArrow tag="div" className="demo">
           <button type="button">1</button>{' '}
           <button type="button">2</button>{' '}
           <button type="button">3</button>
@@ -27,9 +44,8 @@
         </ReactFocusByArrow>
       );
 
-      var container = document.createElement('div');
-      document.body.appendChild(container);
-      ReactDOM.render(demo, container);
+      var demoElement = document.getElementById('demo');
+      ReactDOM.render(demo, demoElement);
     </script>
   </body>
 </html>
